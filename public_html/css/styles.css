@@ -613,7 +613,7 @@ body.active #mask {
   opacity: .6;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index:1021;
@@ -628,7 +628,7 @@ body.active #menu {
 
 #menu {
   z-index: 1022;
-  position: absolute;
+  position: fixed;
   left: -1000px;
   top: 0;
   color: #fff;
