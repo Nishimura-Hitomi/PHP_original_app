@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>掲示板</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Charm|M+PLUS+Rounded+1c&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8bc1904d08.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="sticky-top header">
+  <div class="header__inner">
+    <nav>
+      <ul>
+        <li><i class="openbtn1" id="open"><span></span><span></span><span></span></i></li>
+        <li class="logo"><a href="index.html"><span class="image"><img src="./gazou/app-logo.png" alt=""></span></a></li>
+      </ul>
+    </nav>
+    <!-- ログイン時のみ表示 -->
+    <div class="header-r">
+        <div class="prof-show" data-me=""><a href="./mypage.html"><span class="name"><span class="image"><img src="./gazou/icon.png" alt=""></span>ネコちゃん</span></a></div>
+        <form action="logout.html" id="logout" class="user-btn">
+          <input type="submit" value="ログアウト">
+        </form>
+    </div>
+  </div>
+  </header>
+<div class="wrapper">
+<h1 class="page__ttl">投稿詳細</h1>
+<div class="thread">
+  <div class="thread_img">
+    <div class="fav__btn active">
+      <i class="fas fa-heart"></i>
+    </div>
+    <img src="./gazou/icon.png" alt="">
+  </div>
+  <div class="thread__head">
+    <div class="thread__ttl">
+      <div class="thread_name">
+        <p>アザラジ丸</p>
+        <form id="follow">
+          <button class="btn-thread btn-primary">フォローする</button>
+        </form>
+      </div>
+    </div>
+      <form id="csvoutput">
+        <button class="btn-thread btn-primary">CSV出力</button>
+      </form>
+  </div>
+  <ul class="thread_ttl">
+    <li class="user_ttl">可愛いアザラシちゃん</li>
+    <li class="user_comment"><p>新しく家に来たアザラシちゃんです。まん丸の顔が可愛くてずっと見ていられます！<br>水族館に行くと必ずアザラシのぬいぐるみを買うぐらいアザラシ好きなのでとっても嬉しい！<br>まだ名前も決めていないので皆さんいい名前があったら教えてください♪</p></li>
+    <li class="user_comment_date">投稿日時：2019-06-10 15:51:09</li>
+  </ul>
+    <ul class="thread__body">
+      <li class="comment__item">
+        <label>コメント</label>
+        <div class="comment__item__head">
+          <span class="comment__item__num">1</span>
+          <span class="comment__item__name">名前：ネコちゃん</span>
+          <span class="comment__item__date">投稿日時：2019-06-10 16:03:01</span>
+        </div>
+        <p class="comment__item__content">可愛い子ですね！アザラシの飼育大変そうですが頑張ってください！</p>
+      </li>
+      <li class="comment__item">
+        <div class="comment__item__head">
+          <span class="comment__item__num">2</span>
+          <span class="comment__item__name">名前：タケオ</span>
+          <span class="comment__item__date">投稿日時：2019-06-10 16:40:01</span>
+        </div>
+        <p class="comment__item__content">まん丸でキュートなお顔！お名前たまちゃんとかどうでしょうか？</p>
+      </li>
+    </ul>
+    <form class="form-group">
+      <div class="form-btn">
+        <div class="form-group">
+          <textarea type="text" name="content" class="form-control" placeholder="コメントする"></textarea>
+          <p class="err"></p>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="送信" class="btn btn-primary">
+        </div>
+    </div>
+  </form>
+</div><!-- thread -->
+</div> <!-- wrapper -->
+<div id="mask"></div>
+<div id="menu">
+  <i class="closebtn1" id="close"></i>
+  <div class="menu_text">
+    <img src="./gazou/app-logo.png" alt="">
+    <ul>
+      <li><a href="./thread_all.html">投稿一覧</a></li>
+      <li><a href="./thread_favorite.html">お気に入り</a></li>
+      <li><a href="./thread_create.html">新規作成</a></li>
+      <li><a href="./admin_users.html">管理者ページ</a></li>
+    </ul>
+  </div>
+</div>
+<p class="copy"><small>&copy; 2022 original app.</small></p>
+<script src="./js/bbs.js"></script>
+</body>
+</html>

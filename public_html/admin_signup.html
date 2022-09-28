@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>掲示板</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Charm|M+PLUS+Rounded+1c&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8bc1904d08.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="sticky-top header">
+  <div class="header__inner">
+    <nav>
+      <ul>
+        <li><i class="openbtn1" id="open"><span></span><span></span><span></span></i></li>
+        <li class="logo"><a href="index.html"><span class="image"><img src="./gazou/app-logo.png" alt=""></span></a></li>
+      </ul>
+    </nav>
+    <!-- ログイン時のみ表示 -->
+    <div class="header-r">
+        <div class="prof-show" data-me=""><a href="./mypage.html"><span class="name"><span class="image"><img src="./gazou/icon.png" alt=""></span>ネコちゃん</span></a></div>
+        <form action="logout.html" id="logout" class="user-btn">
+          <input type="submit" value="ログアウト">
+        </form>
+    </div>
+  </div>
+</header>
+<div class="wrapper">
+  <h1 class="page__ttl">ユーザー新規作成管理画面</h1>
+  <form id="userupdate" class="form mypage-form">
+    <div style="margin-bottom: 40px;">
+    <div class="form-group">
+      <div class="imgarea myinfo">
+        <span class="file-btn btn btn-info">
+          画像選択
+          <input type="file" name="image" class="form" style="display:none" accept="image/*">
+        </span>
+        <img src="./gazou/icon.png">
+      </div>
+      <button class="btn btn-primary prof-text">ユーザー画像削除</button>
+    </div>
+    <div class="form-group">
+      <p>権限：1=一般ユーザー、99=管理者</p>
+      <label>ユーザー名</label>
+      <input type="text" name="username" value="" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>メールアドレス</label>
+      <input type="text" name="email" value="" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>権限</label>
+      <select>
+        <option value="1">1</option>
+        <option value="99">99</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>削除フラグ</label>
+      <select>
+        <option value="0">0</option>
+        <option value="1">1</option>
+      </select>
+    </div>
+    <p class="err"></p>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="location.href='./admin_signup_comp.html'">作成</button>
+    <div class="admin_btn">
+      <a href="./admin_users.html">戻る</a>
+    </div>
+  </form>
+</div> <!-- wrapper -->
+<div id="mask"></div>
+<div id="menu">
+  <i class="closebtn1" id="close"></i>
+  <div class="menu_text">
+    <img src="./gazou/app-logo.png" alt="">
+    <ul>
+      <li><a href="./thread_all.html">投稿一覧</a></li>
+      <li><a href="./thread_favorite.html">お気に入り</a></li>
+      <li><a href="./thread_create.html">新規作成</a></li>
+      <li><a href="./admin_users.html">管理者ページ</a></li>
+    </ul>
+  </div>
+</div>
+<p class="copy"><small>&copy; 2022 original app.</small></p>
+<script src="./js/bbs.js"></script>
+</body>
+</html>
