@@ -9,7 +9,7 @@ require_once(__DIR__ .'/../config/config.php');
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <title>codelab掲示板</title>
+  <title>pettomo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link href="https://fonts.googleapis.com/css?family=Charm|M+PLUS+Rounded+1c&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -23,26 +23,31 @@ require_once(__DIR__ .'/../config/config.php');
 <div class="header__inner">
   <nav>
     <ul>
-      <li><a href="<?= SITE_URL; ?>/">ホーム</a></li>
-      <?php
-      if(isset($_SESSION['me'])) { ?>
-      <li><a href="<?= SITE_URL; ?>/thread_all.php">一覧</a></li>
-      <li><a href="<?= SITE_URL; ?>/thread_favorite.php">お気に入り</a></li>
-      <li><a href="<?= SITE_URL; ?>/thread_create.php">作成</a></li>
-      <?php } else { ?>
-        <li class="user-btn"><a href="<?= SITE_URL; ?>/login.php">ログイン</a></li>
-        <li><a href="<?= SITE_URL; ?>/signup.php">ユーザー登録</a></li>
-      <?php } ?>
+      <li><i class="openbtn1" id="open"><span></span><span></span><span></span></i></li>
+      <li class="logo"><a href="<?= SITE_URL; ?>/"><span class="image"><img src="./gazou/app-logo.png" alt=""></span></a></li>
     </ul>
   </nav>
   <div class="header-r">
     <?php
       if(isset($_SESSION['me'])) { ?>
+      <div class="prof-show" data-me="<?= h($_SESSION['me']->id); ?>">
+        <a href="<?= SITE_URL; ?>/mypage.php">
+          <span class="image"><img src="<?= ($_SESSION['me']->image) ? './gazou/'. h($_SESSION['me']->image) : './asset/img/noimage.png'; ?>" alt=""></span>
+          <span class="name"><?= h($_SESSION['me']->username); ?></span>
+        </a>
+      </div>
       <form action="logout.php" method="post" id="logout" class="user-btn">
         <input type="submit" value="ログアウト">
         <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
       </form>
-    <?php  } ?>
+      <?php } else { ?>
+        <nav>
+          <ul>
+            <li class="user-btn"><a href="<?= SITE_URL; ?>/login.php">ログイン</a></li>
+            <li><a href="<?= SITE_URL; ?>/signup.php">登録</a></li>
+          </ul>
+        </nav>
+      <?php } ?>
   </div>
 </div>
 </header>
